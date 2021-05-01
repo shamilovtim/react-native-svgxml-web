@@ -1,5 +1,9 @@
 # Changelog
 
+## [2.2.0] - 2021-05-01
+
+- Only change the fill if props.fill is passed
+
 ## [2.1.0] - 2021-05-01
 
 ### Changes
@@ -15,4 +19,5 @@
 - Initial release
 
 [unreleased]: https://github.com/shamilovtim/react-native-svgxml-web/compare/v2.1.0...master
+[2.2.0]: https://github.com/shamilovtim/react-native-svgxml-web/compare/v2.1.0...v2.2.0
 [2.1.0]: https://github.com/shamilovtim/react-native-svgxml-web/compare/v2.0.0...v2.1.0
