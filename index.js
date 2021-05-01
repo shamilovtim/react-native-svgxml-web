@@ -100,10 +100,15 @@ export const Use = createElement("Use", "use");
 Svg.Use = Use;
 
 export class SvgXml extends React.Component {
+
   render() {
+    const removeFillRegex = /fill=("|')(?:[^\1\\]|\\.)+?\1/gi;
+    const xmlWithFillRemoved = this.props.xml.replace(removeFillRegex, '');
+
     const divProps = Object.assign({}, this.props, {
-      dangerouslySetInnerHTML: { __html: this.props.xml},
+      dangerouslySetInnerHTML: { __html: xmlWithFillRemoved },
       style: {
+        fill: this.props.fill,
         height: this.props.height ? this.props.height + "px" : undefined,
         width: this.props.width ? this.props.width + "px" : undefined,
       }
