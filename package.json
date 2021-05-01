@@ -1,0 +1,45 @@
+{
+  "name": "react-native-svgxml-web",
+  "version": "2.0.0",
+  "description": "React native web svgs with separate svg file support",
+  "main": "index.js",
+  "module": "index",
+  "source": "index",
+  "files": [
+    "index.js"
+  ],
+  "react-native": "index",
+  "author": "Tim Shamilov <shamilovtim@gmail.com>",
+  "license": "MIT",
+  "homepage": "https://github.com/shamilovtim/react-native-happitech-hrv#readme",
+  "keywords": [
+    "react",
+    "native",
+    "svg",
+    "web",
+    "xml"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bakerface/react-native-svg-web.git"
+  },
+  "bugs": {
+    "url": "https://github.com/bakerface/react-native-svg-web/issues"
+  },
+  "peerDependencies": {
+    "prop-types": "*",
+    "react": "*",
+    "react-native-web": "> 0.10.0"
+  },
+  "peerDependenciesMeta": {
+    "prop-types": {
+      "optional": true
+    }
+  },
+  "devDependencies": {
+    "prop-types": "^15.7.2",
+    "react": "16.13.1",
+    "react-dom": "16.13.1",
+    "react-native-web": "0.16.0"
+  }
+}
