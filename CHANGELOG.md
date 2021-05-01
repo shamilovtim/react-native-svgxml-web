@@ -14,5 +14,5 @@
 
 - Initial release
 
-[unreleased]: https://github.com/shamilovtim/cordova-plugin-happitech/compare/v2.1.0...master
-[2.1.0]: https://github.com/shamilovtim/cordova-plugin-happitech/compare/v2.0.0...v2.1.0
+[unreleased]: https://github.com/shamilovtim/react-native-svgxml-web/compare/v2.1.0...master
+[2.1.0]: https://github.com/shamilovtim/react-native-svgxml-web/compare/v2.0.0...v2.1.0
