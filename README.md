@@ -11,7 +11,7 @@ module.exports = {
 
   resolve: {
     alias: {
-      'react-native-svg': 'react-native-svg-web'
+      'react-native-svg': 'react-native-svgxml-web'
     }
   }
 };
@@ -34,5 +34,5 @@ Add the following to your `package.json`.
 And then create a file `./jest/mocks/react-native-svg.js`:
 
 ``` javascript
-jest.mock('react-native-svg', () => require('react-native-svg-web'));
+jest.mock('react-native-svg', () => require('react-native-svgxml-web'));
 ```
