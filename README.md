@@ -1,4 +1,4 @@
-# react-native-svg-web
+# react-native-svgxml-web
 This package can be used as a drop-in replacement for [react-native-svg](https://github.com/react-native-svg/react-native-svg) when targeting the web, or as a mock for [jest](https://github.com/facebook/jest) when testing react-native applications.
 
 ### Targeting the Web
