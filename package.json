@@ -1,6 +1,6 @@
 {
   "name": "react-native-svgxml-web",
-  "version": "2.0.0",
+  "version": "2.1.0",
   "description": "React native web svgs with separate svg file support",
   "main": "index.js",
   "module": "index",
