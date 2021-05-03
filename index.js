@@ -98,28 +98,46 @@ Svg.TSpan = TSpan;
 export const Use = createElement('Use', 'use');
 Svg.Use = Use;
 
-export class SvgXml extends React.Component {
-  handleXMLFill() {
-    if (this.props.fill) {
-      const removeFillRegex = /fill=("|')(?:[^\1\\]|\\.)+?\1/gi;
-      return (xmlWithFillRemoved = this.props.xml.replace(removeFillRegex, ''));
-    } else {
-      return this.props.xml;
-    }
-  }
+function SvgXmlRecursivelySetFill(node, fill) {
+  if (!node) return;
+  node.setAttribute('fill', fill);
+  node.children.forEach(nodeChild => SvgXmlRecursivelySetFill(nodeChild, fill))
+}
 
+export class SvgXml extends React.Component {
+  divRef = React.createRef()
+  componentDidMount() {
+    this.setSvgProps()
+  }
+  componentDidUpdate() {
+    this.setSvgProps()
+  }
+  setSvgProps() {
+    if (!this.divRef.current?.firstElementChild) return;
+    const svg = this.divRef.current.firstElementChild;
+    svg.setAttribute('height', this.props.height);
+    svg.setAttribute('width', this.props.width)
+    SvgXmlRecursivelySetFill(svg, this.props.fill)
+  }
   render() {
-    const divProps = Object.assign({}, this.props, {
-      dangerouslySetInnerHTML: { __html: this.handleXMLFill() },
+    const { xml, fill, size, ...props } = this.props;
+    const divProps = {
+      dangerouslySetInnerHTML: {
+        __html: xml
+      },
       style: {
-        fill: this.props.fill ? this.props.fill : undefined,
         height: this.props.height ? this.props.height + 'px' : undefined,
         width: this.props.width ? this.props.width + 'px' : undefined
       }
-    });
-    return createReactElement('div', divProps, this.props.children);
+    };
+    return (
+      <ReactNativeWeb.View {...props}>
+        <div ref={this.divRef} {...divProps} />
+      </ReactNativeWeb.View>
+    )
   }
 }
+
 SvgXml.propTypes = {
   children: PropTypes.node
 };
