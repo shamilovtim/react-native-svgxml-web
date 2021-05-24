@@ -117,7 +117,10 @@ export class SvgXml extends React.Component {
     const svg = this.divRef.current.firstElementChild;
     svg.setAttribute('height', this.props.height);
     svg.setAttribute('width', this.props.width)
-    SvgXmlRecursivelySetFill(svg, this.props.fill)
+
+    if (!!this.props.fill) {
+      SvgXmlRecursivelySetFill(svg, this.props.fill)
+    }
   }
   render() {
     const { xml, fill, size, ...props } = this.props;
