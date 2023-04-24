@@ -101,7 +101,8 @@ Svg.Use = Use;
 function SvgXmlRecursivelySetFill(node, fill) {
   if (!node) return;
   node.setAttribute('fill', fill);
-  node.children.forEach(nodeChild => SvgXmlRecursivelySetFill(nodeChild, fill))
+  const childArr = Array.from(node.children);
+  childArr.forEach(nodeChild => SvgXmlRecursivelySetFill(nodeChild, fill))
 }
 
 export class SvgXml extends React.Component {
